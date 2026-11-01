@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Echo Reid">
+    <title>Contacts Quiz</title>
+    <style>
+        th, td {
+            border:1px solid black;
+            width:10%; /*so it's not smooshed*/
+            font-family: Arial, Helvetica, sans-serif; /*for readability*/
+            padding: 5px; /*so it's not squished up/down */
+        }
+        th {
+            background-color: lightgray; /*light for readability*/
+        }
+        button {
+            background-color : lightblue; /*colored so the functionality stands out */
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            margin-left: 15%;
+            margin-top: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <th>Slot #</th>
+          <th>Header</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>Arnold</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Sly</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Dwayne</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Vin</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>JCVD</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Steven</td>
+        </tr>
+      </table>
+
+    <button type="button" onclick="
+      const Names = ['Arnold', 'Sly', 'Dwayne', 'Vin', 'JCVD', 'Steven'];
+      let result = 'If you\'re reading this, an error has occured. Error code 1.';
+      let isValid = false;
+      let isDone = false;
+
+      while (!isValid || !isDone)
+      {
+        let userAnswer = prompt('Please enter a slot number:');
+
+        for (let i=0; i < Names.length; i++)
+        {
+          if (i == userAnswer)
+          {
+            isValid = true;
+            result = Names[userAnswer];
+            alert(`You selected ${result}.`)
+          }
+        }
+
+        if (!isValid)
+        {
+          alert('Name not found. Please try again');
+        }
+        else
+        {
+          userAnswer = prompt('Would you like to select another name?')
+          if (userAnswer.toLowerCase() === 'yes')
+          {
+            isDone = false;
+          }
+          else
+          {
+            isDone = true;
+          }
+        }
+      }
+      
+      ">Select a Name.</button>
+    </div>
+
+
+
+    <script>
+    </script>
+  </body>
+</html>
